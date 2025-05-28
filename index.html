@@ -1,358 +1,289 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOIS ELLOS GOIÂNIA - Elegância Futurística</title>
-    <meta name="description" content="Loja de ternos futurísticos com designs modernos e elegantes para o homem contemporâneo. Descubra nossa coleção exclusiva.">
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="static/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clínica Dentária Capão Redondo</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #e6f2ff;
+      color: #003366;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background-color: #0077cc;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+    }
+    nav {
+      margin-top: 0.5rem;
+    }
+    nav a {
+      color: #cce6ff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #e0f0ff;
+    }
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .icon-container {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+    .dentist-icon {
+      width: 80px;
+      height: 80px;
+      fill: #0077cc;
+      filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
+      margin: 0 auto;
+      display: block;
+    }
+    main h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #0059b3;
+    }
+    main p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    .info-box {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      max-width: 320px;
+      margin: 1rem auto;
+      color: #003366;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .whatsapp-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background-color: #25D366;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(37, 211, 102, 0.5);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      margin-top: 1.5rem;
+      user-select: none;
+    }
+    .whatsapp-button:hover,
+    .whatsapp-button:focus {
+      background-color: #1ebe57;
+      box-shadow: 0 6px 12px rgba(30, 190, 87, 0.8);
+      outline: none;
+      text-decoration: none;
+      color: white;
+    }
+    .treatments-section {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 2rem 1.5rem;
+      max-width: 700px;
+      margin: 3rem auto 2rem;
+      color: #003366;
+      text-align: left;
+    }
+    .treatments-section h3 {
+      text-align: center;
+      color: #0077cc;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+    .treatments-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      column-gap: 2rem;
+    }
+    .treatments-list li {
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+      position: relative;
+      padding-left: 1.4rem;
+      font-weight: 600;
+    }
+    .treatments-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #25D366;
+      font-weight: 700;
+    }
+    footer {
+      background-color: #004080;
+      color: #cce6ff;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #aaddff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+      }
+      main h2 {
+        font-size: 1.6rem;
+      }
+      main p {
+        font-size: 1rem;
+      }
+      .info-box {
+        max-width: 90%;
+      }
+      .dentist-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1rem;
+      }
+      .whatsapp-button {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+      }
+      .treatments-section {
+        padding: 1.5rem 1rem;
+        max-width: 90%;
+      }
+      .treatments-list {
+        columns: 1;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">DOIS ELLOS GOIÂNIA</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="sobre.html">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="termos.html">Termos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="privacidade.html">Privacidade</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+  <header role="banner">
+    <h1>Clínica Dentária Capão Redondo</h1>
+    <nav role="navigation" aria-label="Menu principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#horario">Horário</a>
+      <a href="#tratamentos">Tratamentos</a>
+      <a href="#contato">Contato</a>
     </nav>
-
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1 class="display-3 hero-title">DOIS ELLOS GOIÂNIA</h1>
-                <p class="hero-subtitle">Ternos que transcendem o tempo e definem uma nova era de estilo</p>
-                <a href="#collection" class="btn btn-primary btn-glow">Explorar Coleção</a>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="features-section py-5">
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-md-4 mb-4">
-                        <div class="feature-box">
-                            <i class="fas fa-tshirt feature-icon"></i>
-                            <h3>Tecido Inteligente</h3>
-                            <p>Materiais inovadores que se adaptam ao seu corpo e ao ambiente.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="feature-box">
-                            <i class="fas fa-cut feature-icon"></i>
-                            <h3>Design Avançado</h3>
-                            <p>Cortes precisos e elegantes usando tecnologia de vanguarda.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="feature-box">
-                            <i class="fas fa-globe feature-icon"></i>
-                            <h3>Sustentabilidade</h3>
-                            <p>Produção eco-consciente para um futuro melhor e mais elegante.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Collection Section -->
-        <section id="collection" class="collection-section py-5">
-            <div class="container">
-                <div class="section-title text-center mb-5">
-                    <h2>NOSSA COLEÇÃO</h2>
-                    <p>Descubra os ternos que estão redefinindo a elegância masculina</p>
-                </div>
-                <div class="row">
-                    <!-- Product 1 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="product-card">
-                            <div class="product-image-container">
-                                <div class="product-image neo-suit"></div>
-                                <div class="product-overlay">
-                                    <a href="#" class="btn btn-sm btn-primary">Detalhes</a>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h3>Neo Suit</h3>
-                                <p>Terno com tecnologia de auto-ajuste e linhas minimalistas.</p>
-                                <div class="product-price">R$ 2.499,00</div>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                    <span>(28)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 2 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="product-card">
-                            <div class="product-image-container">
-                                <div class="product-image quantum-blazer"></div>
-                                <div class="product-overlay">
-                                    <a href="#" class="btn btn-sm btn-primary">Detalhes</a>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h3>Quantum Blazer</h3>
-                                <p>Blazer de alto desempenho com detalhes luminosos.</p>
-                                <div class="product-price">R$ 1.899,00</div>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <span>(42)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 3 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="product-card">
-                            <div class="product-image-container">
-                                <div class="product-image zenith-collection"></div>
-                                <div class="product-overlay">
-                                    <a href="#" class="btn btn-sm btn-primary">Detalhes</a>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h3>Zenith Collection</h3>
-                                <p>Conjunto completo feito com tecido inteligente termo-regulador.</p>
-                                <div class="product-price">R$ 3.299,00</div>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <span>(19)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 4 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="product-card">
-                            <div class="product-image-container">
-                                <div class="product-image matrix-suit"></div>
-                                <div class="product-overlay">
-                                    <a href="#" class="btn btn-sm btn-primary">Detalhes</a>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h3>Matrix Suit</h3>
-                                <p>Terno clássico reinventado com corte estruturado e detalhes metálicos.</p>
-                                <div class="product-price">R$ 2.799,00</div>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                    <span>(37)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 5 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="product-card">
-                            <div class="product-image-container">
-                                <div class="product-image cosmos-tuxedo"></div>
-                                <div class="product-overlay">
-                                    <a href="#" class="btn btn-sm btn-primary">Detalhes</a>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h3>Cosmos Tuxedo</h3>
-                                <p>Smoking de luxo com padrão sutil inspirado nas galáxias.</p>
-                                <div class="product-price">R$ 3.599,00</div>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <span>(51)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 6 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="product-card">
-                            <div class="product-image-container">
-                                <div class="product-image nova-vest"></div>
-                                <div class="product-overlay">
-                                    <a href="#" class="btn btn-sm btn-primary">Detalhes</a>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h3>Nova Vest</h3>
-                                <p>Colete ultramoderno com tecnologia de controle climático integrada.</p>
-                                <div class="product-price">R$ 899,00</div>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <span>(24)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section class="testimonials-section py-5">
-            <div class="container">
-                <div class="section-title text-center mb-5">
-                    <h2>O QUE NOSSOS CLIENTES DIZEM</h2>
-                    <p>Experiências que transformam o modo de vestir e de se apresentar</p>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <p>"O Neo Suit revolucionou minha forma de me vestir. O conforto é inacreditável e recebo elogios em todos os eventos."</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-image"></div>
-                                <div class="author-info">
-                                    <h5>Carlos Mendes</h5>
-                                    <p>Executivo de Marketing</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <p>"A qualidade dos tecidos e o design futurista me conquistaram. É como vestir o futuro hoje, sem perder a elegância clássica."</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-image"></div>
-                                <div class="author-info">
-                                    <h5>André Sousa</h5>
-                                    <p>Arquiteto</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <p>"O atendimento personalizado e as opções de customização fizeram toda a diferença. Meu Quantum Blazer se adapta perfeitamente ao meu estilo."</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-image"></div>
-                                <div class="author-info">
-                                    <h5>Luiz Ferreira</h5>
-                                    <p>Designer de Produtos</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Newsletter Section -->
-        <section class="newsletter-section py-5">
-            <div class="container">
-                <div class="newsletter-content text-center">
-                    <h2>MANTENHA-SE ATUALIZADO</h2>
-                    <p>Inscreva-se para receber as últimas novidades e ofertas exclusivas</p>
-                    <div class="newsletter-form">
-                        <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Seu endereço de e-mail" aria-label="E-mail" aria-describedby="newsletter-submit">
-                            <button class="btn btn-primary" type="button" id="newsletter-submit">Inscrever-se</button>
-                        </div>
-                        <div class="form-text mt-2 text-light">Respeitamos sua privacidade e nunca compartilharemos seu e-mail.</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer mt-auto py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>DOIS ELLOS GOIÂNIA</h5>
-                    <p>Elegância futurística para o homem moderno.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/doiselloscamisaria/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="https://cnpj.biz/07381553000180" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <h5>Links Rápidos</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html">Início</a></li>
-                        <li><a href="sobre.html">Sobre</a></li>
-                        <li><a href="termos.html">Termos</a></li>
-                        <li><a href="privacidade.html">Privacidade</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Contato</h5>
-                    <address>
-                        <p><i class="fas fa-map-marker-alt"></i> Loja1 lado direito Galeria Napoli - R. 300, N° 078 - Norte ferroviário, Goiânia - GO, 74934-620</p>
-                        <p><i class="fas fa-phone"></i> (62) 98190-6158</p>
-                        <p><i class="fas fa-envelope"></i> contato@doisellos.com.br</p>
-                    </address>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col text-center">
-                    <p class="copyright">© 2023 DOIS ELLOS GOIÂNIA. Todos os direitos reservados.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="static/js/main.js"></script>
+  </header>
+  <main role="main">
+    <div class="icon-container" aria-label="Ícone representando dentista">
+      <svg class="dentist-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ícone de dentista">
+        <title>Ícone de dentista</title>
+        <path d="M32 2c-7 0-13 5-14 12v23c0 8 5 14 14 14s14-6 14-14V14C45 7 39 2 32 2zm0 4c5 0 9 4 9 9v23c0 5-4 9-9 9s-9-4-9-9V15c0-5 4-9 9-9z" fill="#0077cc"/>
+        <circle cx="32" cy="22" r="6" fill="#cce6ff"/>
+        <path d="M25 44h14v4H25z" fill="#0077cc"/>
+      </svg>
+    </div>
+    <h2 id="sobre">Seu Sorriso, Nossa Prioridade</h2>
+    <p>
+      Atendimento especializado em odontologia no Capão Redondo. Nossa equipe é dedicada a cuidar da sua saúde bucal com carinho e tecnologia de ponta.
+    </p>
+    <div class="info-box" id="horario">
+      <strong>Horário de Atendimento:</strong><br/>
+      Segunda a Sexta: 9h às 18h
+    </div>
+    <div class="info-box">
+      <strong>Localização:</strong><br/>
+      Capão Redondo - São Paulo, SP
+    </div>
+    <a 
+      href="https://wa.me/5511987654321" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="whatsapp-button" 
+      aria-label="Entrar em contato pelo WhatsApp"
+    >
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        width="24" height="24" 
+        fill="none" 
+        stroke="currentColor" 
+        stroke-width="2" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+      >
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.9 19.9 0 0 1-8.63-3.16 19.5 19.5 0 0 1-6-6 19.9 19.9 0 0 1-3.16-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.4 12.4 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 10.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.6 12.6 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      Fale Conosco no WhatsApp
+    </a>
+    <section class="treatments-section" id="tratamentos" aria-labelledby="tratamentos-title">
+      <h3 id="tratamentos-title">Nossos Tratamentos</h3>
+      <ul class="treatments-list">
+        <li>Limpeza Dental Profissional</li>
+        <li>Clareamento Dental</li>
+        <li>Implantes Dentários</li>
+        <li>Tratamento de Canal</li>
+        <li>Ortodontia (Aparelhos)</li>
+        <li>Próteses Dentárias</li>
+        <li>Odontopediatria (Cuidado para crianças)</li>
+        <li>Emergências Odontológicas</li>
+        <li>Cirurgias Bucais</li>
+        <li>Exames Radiográficos</li>
+      </ul>
+    </section>
+  </main>
+  <footer role="contentinfo" id="contato">
+    <p>Contato: <a href="tel:+5511987654321">(11) 98765-4321</a> | WhatsApp disponível</p>
+    <p>© 2024 Clínica Dentária Capão Redondo. Todos os direitos reservados.</p>
+  </footer>
+  <script>
+    // Smooth scroll for navigation links
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetID = link.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetID);
+        if(targetSection){
+          targetSection.scrollIntoView({behavior: 'smooth'});
+        }
+      });
+    });
+  </script>
 </body>
 </html>
+
