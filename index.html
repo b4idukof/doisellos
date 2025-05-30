@@ -3,12 +3,12 @@
 <head>
   <title>Agenda Barbearia</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    select, button { padding: 8px; margin: 10px 0; font-size: 16px; }
+    body { font-family: sans-serif; padding: 20px; }
+    select, button { margin: 10px 0; padding: 8px; font-size: 16px; }
   </style>
 </head>
 <body>
-  <h2>📅 Agendamento</h2>
+  <h2>📅 Agende um horário</h2>
 
   <label>Mês:</label><br>
   <select id="mes"></select><br>
@@ -26,27 +26,19 @@
   <button onclick="buscarAgenda()">Ver horários</button>
 
   <pre id="resultado"></pre>
-  <input id="um" value="resulta"><br>
-<input id="dois" value="resulta"><br>
-  <input id="tres" value="resulta"><br>
-  <input id="quatro" value="resulta"><br>
-  <input id="cinco" value="resulta"><br>
-  <button value="clickink" onclick="clickink()">
-  
+
   <script>
     const mesSelect = document.getElementById('mes');
     const diaSelect = document.getElementById('dia');
     const resultado = document.getElementById('resultado');
 
-    // preencher meses
     for (let i = 1; i <= 12; i++) {
       const opt = document.createElement('option');
       opt.value = i.toString().padStart(2, '0');
-      opt.text = i + ' - ' + new Date(0, i - 1).toLocaleString('pt-BR', { month: 'long' });
+      opt.text = `${i} - ${new Date(0, i - 1).toLocaleString('pt-BR', { month: 'long' })}`;
       mesSelect.appendChild(opt);
     }
 
-    // preencher dias
     for (let i = 1; i <= 31; i++) {
       const opt = document.createElement('option');
       opt.value = i.toString().padStart(2, '0');
@@ -60,30 +52,20 @@
       const dia = diaSelect.value;
       const ano = new Date().getFullYear();
       const data = `${ano}-${mes}-${dia}`;
-    
-      
-      fetch(`http://ice-club.my/get_agenda.php?barbeiro=${barbeiro}&data=${data}`)
+
+      fetch(`/api/proxy?barbeiro=${barbeiro}&data=${data}`)
         .then(res => res.json())
-        .then(dados => {
-          if (dados.erro) {
-            resultado.textContent = '❌ ' + dados.erro;
-          } else if (dados.horarios.length === 0) {
-            resultado.textContent = `⚠️ Nenhum horário disponível para ${dados.barbeiro} em ${dados.data}`;
+        .then(json => {
+          if (json.erro) {
+            resultado.textContent = '❌ ' + json.erro;
+          } else if (json.horarios.length === 0) {
+            resultado.textContent = `⚠️ Nenhum horário disponível para ${json.data}`;
           } else {
-            resultado.textContent = `📅 Horários para ${dados.barbeiro} em ${dados.data}:\n\n` + dados.horarios.join('\\n');
+            resultado.textContent = `📅 Horários de ${json.barbeiro} em ${json.data}:\n\n` + json.horarios.join('\n');
           }
         })
-        .catch(err => {
-          resultado.textContent = 'Erro ao buscar os dados.';
-        });
-    };
-function clickink() {    
-  var document.getElementById("um").value = const barbeiro;
-      var document.getElementById("dois").value = const mes;
-       var document.getElementById("tres").value = const ano;
- var document.getElementById("quatro").value = const dia;
-       var document.getElementById("cinco").value = const data;
-   } ;
+        .catch(() => resultado.textContent = '❌ Erro ao consultar servidor.');
+    }
   </script>
 </body>
 </html>
