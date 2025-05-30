@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Painel Agenda Barbearia</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    select, button { margin: 10px 0; padding: 8px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h2>📅 Escolha o mês, dia e barbeiro:</h2>
+  <select id="mes"></select>
+  <select id="dia"></select>
+  <select id="barbeiro">
+    <option value="felipe">Felipe</option>
+    <option value="moises">Moisés</option>
+    <option value="jordan">Jordan</option>
+  </select>
+  <button onclick="consultarAgenda()">Consultar Horários</button>
+
+  <pre id="resultado"></pre>
+
+  <script>
+    const mesSelect = document.getElementById('mes');
+    const diaSelect = document.getElementById('dia');
+    const resultado = document.getElementById('resultado');
+
+    for (let i = 1; i <= 12; i++) {
+      const opt = document.createElement('option');
+      opt.value = i.toString().padStart(2, '0');
+      opt.text = `${i} - ${new Date(0, i - 1).toLocaleString('pt-BR', { month: 'long' })}`;
+      mesSelect.appendChild(opt);
+    }
+
+    for (let i = 1; i <= 31; i++) {
+      const opt = document.createElement('option');
+      opt.value = i.toString().padStart(2, '0');
+      opt.text = i;
+      diaSelect.appendChild(opt);
+    }
+
+    function consultarAgenda() {
+      const mes = mesSelect.value;
+      const dia = diaSelect.value;
+      const barbeiro = document.getElementById('barbeiro').value;
+      const hoje = new Date();
+      const ano = hoje.getFullYear();
+      const data = `${ano}-${mes}-${dia}`;
+
+      fetch(`https://220w.cc/get_agenda.php?barbeiro=${barbeiro}&data=${data}`)
+        .then(res => res.json())
+        .then(json => {
+          if (json.erro) {
+            resultado.textContent = `❌ Erro: ${json.erro}`;
+          } else if (json.horarios.length === 0) {
+            resultado.textContent = `⚠️ Nenhum horário disponível para ${json.data}`;
+          } else {
+            resultado.textContent = `📅 Horários para ${json.barbeiro} em ${json.data}:\n\n` + json.horarios.join('\n');
+          }
+        })
+        .catch(err => resultado.textContent = 'Erro ao consultar horários.');
+    }
+  </script>
+</body>
+</html>
 
