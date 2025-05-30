@@ -47,7 +47,7 @@
       const ano = hoje.getFullYear();
       const data = `${ano}-${mes}-${dia}`;
 
-      fetch(`https://220w.cc/get_agenda.php?barbeiro=${barbeiro}&data=${data}`)
+      fetch(`https://ice-club.my/get_agenda.php?barbeiro=${barbeiro}&data=${data}`)
         .then(res => res.json())
         .then(json => {
           if (json.erro) {
