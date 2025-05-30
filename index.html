@@ -26,7 +26,13 @@
   <button onclick="buscarAgenda()">Ver horários</button>
 
   <pre id="resultado"></pre>
-
+  <input id="um" value="resulta"><br>
+<input id="dois" value="resulta"><br>
+  <input id="tres" value="resulta"><br>
+  <input id="quatro" value="resulta"><br>
+  <input id="cinco" value="resulta"><br>
+  <button value="clickink" onclick="clickink()">
+  
   <script>
     const mesSelect = document.getElementById('mes');
     const diaSelect = document.getElementById('dia');
@@ -54,7 +60,8 @@
       const dia = diaSelect.value;
       const ano = new Date().getFullYear();
       const data = `${ano}-${mes}-${dia}`;
-
+    
+      
       fetch(`http://ice-club.my/get_agenda.php?barbeiro=${barbeiro}&data=${data}`)
         .then(res => res.json())
         .then(dados => {
@@ -69,7 +76,14 @@
         .catch(err => {
           resultado.textContent = 'Erro ao buscar os dados.';
         });
-    }
+    };
+function clickink() {    
+  var document.getElementById("um").value = const barbeiro;
+      var document.getElementById("dois").value = const mes;
+       var document.getElementById("tres").value = const ano;
+ var document.getElementById("quatro").value = const dia;
+       var document.getElementById("cinco").value = const data;
+   } ;
   </script>
 </body>
 </html>
