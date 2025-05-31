@@ -12,12 +12,23 @@
     h2 {
       color: #333;
     }
-    select, button {
-      padding: 10px;
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: 600px;
       margin: 10px 0;
+    }
+    .btn {
+      padding: 10px 16px;
       font-size: 16px;
-      width: 100%;
-      max-width: 300px;
+      cursor: pointer;
+      background-color: #eee;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .btn:hover {
+      background-color: #ddd;
     }
     #resultado {
       margin-top: 20px;
@@ -33,86 +44,75 @@
   </style>
 </head>
 <body>
-  <h2>📅 Ver horários disponíveis</h2>
+  <h2>📅 Agendar horário com clique</h2>
 
-  <!-- Selecionar mês -->
-  <label for="mes">1️⃣ Escolha o mês:</label>
-  <select id="mes" onchange="mostrarDias()">
-    <option value="">-- Selecione --</option>
-  </select>
-
-  <!-- Selecionar dia -->
-  <div id="area-dia" class="hidden">
-    <label for="dia">2️⃣ Escolha o dia:</label>
-    <select id="dia" onchange="mostrarBarbeiros()">
-      <option value="">-- Selecione --</option>
-    </select>
+  <div id="passo-mes">
+    <h3>1️⃣ Escolha o mês:</h3>
+    <div class="container" id="meses"></div>
   </div>
 
-  <!-- Selecionar barbeiro -->
-  <div id="area-barbeiro" class="hidden">
-    <label for="barbeiro">3️⃣ Escolha o barbeiro:</label>
-    <select id="barbeiro" onchange="consultarAgenda()">
-      <option value="">-- Selecione --</option>
-      <option value="felipe">Felipe</option>
-      <option value="moises">Moisés</option>
-      <option value="jordan">Jordan</option>
-    </select>
+  <div id="passo-dia" class="hidden">
+    <h3>2️⃣ Escolha o dia:</h3>
+    <div class="container" id="dias"></div>
   </div>
 
-  <pre id="resultado">Selecione o mês, dia e barbeiro para consultar.</pre>
+  <div id="passo-barbeiro" class="hidden">
+    <h3>3️⃣ Escolha o barbeiro:</h3>
+    <div class="container" id="barbeiros">
+      <button class="btn" onclick="consultarAgenda('felipe')">Felipe</button>
+      <button class="btn" onclick="consultarAgenda('moises')">Moisés</button>
+      <button class="btn" onclick="consultarAgenda('jordan')">Jordan</button>
+    </div>
+  </div>
+
+  <pre id="resultado">Escolha o mês para iniciar.</pre>
 
   <script>
-    const mesSelect = document.getElementById('mes');
-    const diaSelect = document.getElementById('dia');
-    const barbeiroSelect = document.getElementById('barbeiro');
+    let dataSelecionada = { mes: '', dia: '', ano: new Date().getFullYear() };
+
+    const mesesDiv = document.getElementById('meses');
+    const diasDiv = document.getElementById('dias');
     const resultado = document.getElementById('resultado');
-    const areaDia = document.getElementById('area-dia');
-    const areaBarbeiro = document.getElementById('area-barbeiro');
 
-    // Preenche os meses (1 a 12)
+    // Cria botões de mês
     for (let i = 1; i <= 12; i++) {
-      const opt = document.createElement('option');
-      opt.value = i.toString().padStart(2, '0');
-      opt.text = `${i} - ${new Date(0, i - 1).toLocaleString('pt-BR', { month: 'long' })}`;
-      mesSelect.appendChild(opt);
+      const mes = i.toString().padStart(2, '0');
+      const nome = new Date(0, i - 1).toLocaleString('pt-BR', { month: 'long' });
+      const btn = document.createElement('button');
+      btn.className = 'btn';
+      btn.textContent = `${mes} - ${nome}`;
+      btn.onclick = () => selecionarMes(mes);
+      mesesDiv.appendChild(btn);
     }
 
-    // Quando escolher o mês
-    function mostrarDias() {
-      diaSelect.innerHTML = '<option value="">-- Selecione --</option>';
-      areaDia.classList.remove('hidden');
-      areaBarbeiro.classList.add('hidden');
-      resultado.textContent = 'Selecione o dia.';
+    function selecionarMes(mes) {
+      dataSelecionada.mes = mes;
+      document.getElementById('passo-dia').classList.remove('hidden');
+      document.getElementById('passo-barbeiro').classList.add('hidden');
+      resultado.textContent = 'Agora selecione o dia.';
 
+      diasDiv.innerHTML = ''; // limpa antes de popular
       for (let i = 1; i <= 31; i++) {
-        const opt = document.createElement('option');
-        opt.value = i.toString().padStart(2, '0');
-        opt.text = i;
-        diaSelect.appendChild(opt);
+        const dia = i.toString().padStart(2, '0');
+        const btn = document.createElement('button');
+        btn.className = 'btn';
+        btn.textContent = dia;
+        btn.onclick = () => selecionarDia(dia);
+        diasDiv.appendChild(btn);
       }
     }
 
-    // Quando escolher o dia
-    function mostrarBarbeiros() {
-      if (diaSelect.value) {
-        areaBarbeiro.classList.remove('hidden');
-        resultado.textContent = 'Escolha o barbeiro.';
-      } else {
-        areaBarbeiro.classList.add('hidden');
-        resultado.textContent = 'Selecione o dia.';
-      }
+    function selecionarDia(dia) {
+      dataSelecionada.dia = dia;
+      document.getElementById('passo-barbeiro').classList.remove('hidden');
+      resultado.textContent = 'Agora escolha o barbeiro.';
     }
 
-    // Quando escolher o barbeiro, faz a consulta
-    async function consultarAgenda() {
-      const barbeiro = barbeiroSelect.value;
-      const mes = mesSelect.value;
-      const dia = diaSelect.value;
-      const ano = new Date().getFullYear();
+    async function consultarAgenda(barbeiro) {
+      const { dia, mes, ano } = dataSelecionada;
       const data = `${ano}-${mes}-${dia}`;
 
-      resultado.textContent = '⏳ Consultando...';
+      resultado.textContent = `🔍 Consultando ${barbeiro} em ${data}...`;
 
       try {
         const res = await fetch(`https://ice-club.my/get_agenda.php?barbeiro=${barbeiro}&data=${data}`);
