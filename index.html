@@ -37,7 +37,7 @@
       resultado.textContent = '⏳ Consultando...';
 
       try {
-        const res = await fetch(`http://ice-club.my/get_agenda.php?barbeiro=${barbeiro}&data=${data}`);
+        const res = await fetch(`https://ice-club.my/get_agenda.php?barbeiro=${barbeiro}&data=${data}`);
         const json = await res.json();
 
         if (json.erro) {
