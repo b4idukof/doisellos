@@ -53,7 +53,7 @@
       const ano = new Date().getFullYear();
       const data = `${ano}-${mes}-${dia}`;
 
-      fetch(`/api/proxy?barbeiro=${barbeiro}&data=${data}`)
+      fetch(`/proxy?barbeiro=${barbeiro}&data=${data}`)
         .then(res => res.json())
         .then(json => {
           if (json.erro) {
