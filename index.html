@@ -1,56 +1,183 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Consulta de Horários</title>
-  <style>
-    body { font-family: Arial; padding: 20px; background: #f9f9f9; }
-    input, button { padding: 10px; font-size: 16px; margin: 10px 0; display: block; width: 100%; max-width: 300px; }
-    pre { background: #fff; padding: 20px; border: 1px solid #ccc; white-space: pre-wrap; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Premium - Agendamento Online</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h2>🗓️ Verificar horários de um barbeiro</h2>
+    <!-- Background Elements -->
+    <div class="bg-decoration">
+        <div class="razor-blade razor-1"></div>
+        <div class="razor-blade razor-2"></div>
+        <div class="razor-blade razor-3"></div>
+    </div>
 
-  <input type="text" id="dia" placeholder="Dia (ex: 01)">
-  <input type="text" id="mes" placeholder="Mês (ex: 06)">
-  <input type="text" id="ano" placeholder="Ano (ex: 2025)">
-  <input type="text" id="barbeiro" placeholder="Nome do barbeiro (ex: felipe)">
-  <button onclick="consultarAgenda()">🔍 Ver horários</button>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-cut"></i>
+                <h1>Barbearia <span class="highlight">Premium</span></h1>
+            </div>
+            <p class="tagline">Agendamento Online - Excelência em Cada Corte</p>
+        </div>
+    </header>
 
-  <pre id="resultado">Preencha os campos e clique para consultar.</pre>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Progress Indicator -->
+            <div class="progress-bar">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <span>Mês</span>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-icon">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <span>Dia</span>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <span>Barbeiro</span>
+                </div>
+            </div>
 
-  <script>
-    async function consultarAgenda() {
-      const dia = document.getElementById('dia').value.padStart(2, '0');
-      const mes = document.getElementById('mes').value.padStart(2, '0');
-      const ano = document.getElementById('ano').value;
-      const barbeiro = document.getElementById('barbeiro').value.trim().toLowerCase();
-      const data = `${ano}-${mes}-${dia}`;
-      const resultado = document.getElementById('resultado');
+            <!-- Booking Steps -->
+            <div class="booking-container">
+                <!-- Step 1: Month Selection -->
+                <div id="passo-mes" class="booking-step active">
+                    <div class="step-header">
+                        <h2><i class="fas fa-calendar-alt"></i> Escolha o Mês</h2>
+                        <p>Selecione o mês desejado para seu agendamento</p>
+                    </div>
+                    <div class="options-grid" id="meses"></div>
+                </div>
 
-      if (!dia || !mes || !ano || !barbeiro) {
-        resultado.textContent = '❌ Por favor, preencha todos os campos.';
-        return;
-      }
+                <!-- Step 2: Day Selection -->
+                <div id="passo-dia" class="booking-step">
+                    <div class="step-header">
+                        <h2><i class="fas fa-calendar-day"></i> Escolha o Dia</h2>
+                        <p>Selecione o dia que melhor se adequa à sua agenda</p>
+                    </div>
+                    <div class="options-grid" id="dias"></div>
+                    <button class="btn-back" onclick="voltarPasso(1)">
+                        <i class="fas fa-arrow-left"></i> Voltar
+                    </button>
+                </div>
 
-      resultado.textContent = '⏳ Consultando...';
+                <!-- Step 3: Barber Selection -->
+                <div id="passo-barbeiro" class="booking-step">
+                    <div class="step-header">
+                        <h2><i class="fas fa-user-tie"></i> Escolha seu Barbeiro</h2>
+                        <p>Nossos profissionais especializados à sua disposição</p>
+                    </div>
+                    <div class="barbers-grid" id="barbeiros">
+                        <div class="barber-card" onclick="consultarAgenda('felipe')">
+                            <div class="barber-avatar">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="barber-info">
+                                <h3>Felipe</h3>
+                                <p>Especialista em cortes clássicos</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="barber-card" onclick="consultarAgenda('moises')">
+                            <div class="barber-avatar">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="barber-info">
+                                <h3>Moisés</h3>
+                                <p>Mestre em barbas e bigodes</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="barber-card" onclick="consultarAgenda('jordan')">
+                            <div class="barber-avatar">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="barber-info">
+                                <h3>Jordan</h3>
+                                <p>Cortes modernos e estilosos</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-back" onclick="voltarPasso(2)">
+                        <i class="fas fa-arrow-left"></i> Voltar
+                    </button>
+                </div>
+            </div>
 
-      try {
-        const res = await fetch(`https://ice-club.my/get_agenda.php?barbeiro=${barbeiro}&data=${data}`);
-        const json = await res.json();
+            <!-- Results Section -->
+            <div class="results-container">
+                <div id="resultado" class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="result-content">
+                        <h3>Bem-vindo à Barbearia Premium</h3>
+                        <p>Escolha o mês para iniciar seu agendamento e desfrute de uma experiência única com nossos profissionais especializados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-        if (json.erro) {
-          resultado.textContent = '❌ ' + json.erro;
-        } else if (!json.horarios || json.horarios.length === 0) {
-          resultado.textContent = `⚠️ Nenhum horário encontrado para ${json.barbeiro} em ${json.data}`;
-        } else {
-          resultado.textContent = `📅 Horários de ${json.barbeiro} em ${json.data}:\n\n` + json.horarios.join('\n');
-        }
-      } catch (e) {
-        resultado.textContent = '❌ Erro ao consultar o servidor.';
-      }
-    }
-  </script>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Consultando disponibilidade...</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Barbearia Premium. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
