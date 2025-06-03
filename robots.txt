@@ -1,5 +1,27 @@
+
 User-agent: *
 Allow: /
-Disallow: /admin/
 
-Sitemap: https://www.doisellos.com.br/sitemap.xml
+# Sitemap location
+Sitemap: https://doisellos.com.br/sitemap.xml
+
+# Block access to private directories
+Disallow: /attached_assets/
+Disallow: /.replit
+Disallow: /generated-icon.png
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Crawl delay (optional)
+Crawl-delay: 1
