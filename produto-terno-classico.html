@@ -1,0 +1,878 @@
+<html lang="pt-BR">
+    <head>
+        <!-- Schema Markup (JSON-LD) -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Product",
+                "name": "Terno Clássico - Doisellos Camisetaria",
+                "image": [
+                    "https://www.doisellos.com.br/produto2-foto01.webp.webp",
+                    "https://www.doisellos.com.br/produto2-foto02.webp.webp",
+                    "https://www.doisellos.com.br/produto2-foto03.webp.webp",
+                    "https://www.doisellos.com.br/produto2-foto04.webp.webp"
+                ],
+                "description": "Terno Clássico de alta qualidade, versatilidade e sofisticação em um só modelo. Tecido premium, corte tradicional e acabamento superior.",
+                "sku": "TERNO-CLAS-002",
+                "brand": {
+                    "@type": "Brand",
+                    "name": "Doisellos Camisetaria"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "url": "https://www.doisellos.com.br/produto-terno-classico.html",
+                    "priceCurrency": "BRL",
+                    "price": "450.00",
+                    "availability": "https://schema.org/InStock",
+                    "seller": {
+                        "@type": "Organization",
+                        "name": "Doisellos Camisetaria",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "R. 301, 44",
+                            "addressLocality": "Goiânia",
+                            "addressRegion": "GO",
+                            "postalCode": "74063-380",
+                            "addressCountry": "BR"
+                        },
+                        "telephone": "+55 62 98190-6158"
+                    }
+                },
+                "category": "Ternos Masculinos",
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.7",
+                    "reviewCount": "35"
+                }
+            }
+        </script>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="styles.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+
+        <!-- Título Otimizado -->
+        <title>
+            Terno Clássico - Comprar Online | Doisellos Camisetaria Goiânia
+        </title>
+
+        <!-- Icon fav -->
+        <link rel="icon" href="/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="https://ice-club.my/448347752_1947298762387188_9092958691574414105_n.jpg"
+        />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Terno Clássico - Doisellos Camisetaria"
+        />
+        <meta
+            name="twitter:description"
+            content="Terno Clássico de alta qualidade. Versatilidade e sofisticação em um só modelo. Compre online com entrega para todo Brasil."
+        />
+        <meta
+            name="twitter:image"
+            content="https://www.doisellos.com.br/produto2-foto01.webp.webp"
+        />
+
+        <!-- Open Graph / Meta Tags Sociais -->
+        <meta
+            property="og:title"
+            content="Terno Clássico - Doisellos Camisetaria"
+        />
+        <meta
+            property="og:description"
+            content="Terno Clássico de alta qualidade. Versatilidade e sofisticação em um só modelo. Compre online com entrega para todo Brasil."
+        />
+        <meta
+            property="og:image"
+            content="https://www.doisellos.com.br/produto2-foto01.webp.webp"
+        />
+        <meta
+            property="og:url"
+            content="https://www.doisellos.com.br/produto-terno-classico.html"
+        />
+        <meta property="og:type" content="product" />
+        <meta property="og:site_name" content="Doisellos Camisetaria" />
+
+        <!-- Canonical -->
+        <link
+            rel="canonical"
+            href="https://www.doisellos.com.br/produto-terno-classico.html"
+        />
+
+        <!-- Descrição Otimizada -->
+        <meta
+            name="description"
+            content="Terno Clássico Doisellos - Versatilidade e sofisticação em um só modelo. Tecido premium, corte tradicional. Entrega para todo Brasil. Loja física em Goiânia."
+        />
+
+        <style>
+            /* Estilos específicos para a página do produto */
+            .product-detail-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 120px 20px 40px;
+            }
+
+            .product-detail-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 60px;
+                margin-bottom: 60px;
+            }
+
+            .product-gallery-main {
+                position: relative;
+            }
+
+            .main-image-container {
+                position: relative;
+                margin-bottom: 20px;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .main-image {
+                width: 100%;
+                height: 600px;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+
+            .main-image:hover {
+                transform: scale(1.05);
+            }
+
+            .thumbnail-gallery {
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .thumbnail {
+                width: 80px;
+                height: 80px;
+                border-radius: 10px;
+                overflow: hidden;
+                cursor: pointer;
+                border: 3px solid transparent;
+                transition: all 0.3s ease;
+            }
+
+            .thumbnail.active {
+                border-color: var(--primary-color, #2c3e50);
+            }
+
+            .thumbnail img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .product-info-main {
+                padding: 20px 0;
+            }
+
+            .product-title {
+                font-family: var(--font-display);
+                font-size: 2.5rem;
+                font-weight: 600;
+                color: var(--dark-silver);
+                margin-bottom: 15px;
+            }
+
+            .product-price {
+                font-size: 2rem;
+                font-weight: 600;
+                color: #e74c3c;
+                margin-bottom: 20px;
+            }
+
+            .product-description-main {
+                font-size: 1.1rem;
+                line-height: 1.6;
+                color: var(--medium-silver);
+                margin-bottom: 30px;
+            }
+
+            .product-options {
+                margin-bottom: 30px;
+            }
+
+            .option-group {
+                margin-bottom: 25px;
+            }
+
+            .option-label {
+                font-weight: 600;
+                margin-bottom: 10px;
+                display: block;
+                color: var(--dark-silver);
+            }
+
+            .size-options {
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+            .size-option {
+                padding: 12px 20px;
+                border: 2px solid var(--pale-silver);
+                border-radius: var(--radius-md);
+                cursor: pointer;
+                transition: var(--transition-fast);
+                font-weight: 500;
+            }
+
+            .size-option:hover,
+            .size-option.selected {
+                border-color: var(--dark-silver);
+                background-color: var(--dark-silver);
+                color: white;
+            }
+
+            .color-options {
+                display: flex;
+                gap: 15px;
+            }
+
+            .color-option {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 3px solid var(--pale-silver);
+                cursor: pointer;
+                transition: var(--transition-fast);
+            }
+
+            .color-option.selected {
+                border-color: var(--dark-silver);
+                transform: scale(1.1);
+            }
+
+            .purchase-section {
+                background: var(--off-white);
+                padding: var(--spacing-xl);
+                border-radius: var(--radius-lg);
+                margin-bottom: var(--spacing-xl);
+            }
+
+            .buy-button {
+                width: 100%;
+                padding: 18px;
+                background: linear-gradient(135deg, #27ae60, #2ecc71);
+                color: white;
+                border: none;
+                border-radius: var(--radius-md);
+                font-size: 1.2rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: var(--transition-fast);
+                margin-bottom: 15px;
+                text-decoration: none;
+                display: inline-block;
+                text-align: center;
+            }
+
+            .buy-button:hover {
+                background: linear-gradient(135deg, #219a52, #27ae60);
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+            }
+
+            .contact-button {
+                width: 100%;
+                padding: 15px;
+                background: var(--accent-silver);
+                color: white;
+                border: none;
+                border-radius: var(--radius-md);
+                font-size: 1.1rem;
+                font-weight: 500;
+                cursor: pointer;
+                transition: var(--transition-fast);
+                text-decoration: none;
+                display: inline-block;
+                text-align: center;
+            }
+
+            .contact-button:hover {
+                background: var(--medium-silver);
+                transform: translateY(-2px);
+            }
+
+            .specifications {
+                background: var(--pure-white);
+                padding: var(--spacing-2xl);
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-medium);
+                margin-bottom: var(--spacing-2xl);
+            }
+
+            .spec-title {
+                font-family: var(--font-display);
+                font-size: 2rem;
+                font-weight: 600;
+                color: var(--dark-silver);
+                margin-bottom: var(--spacing-xl);
+                text-align: center;
+            }
+
+            .spec-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: var(--spacing-lg);
+            }
+
+            .spec-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: var(--spacing-md) 0;
+                border-bottom: 1px solid var(--pale-silver);
+                transition: var(--transition-fast);
+            }
+
+            .spec-item:hover {
+                background-color: var(--off-white);
+                padding-left: var(--spacing-sm);
+                border-radius: var(--radius-sm);
+            }
+
+            .spec-item:last-child {
+                border-bottom: none;
+            }
+
+            .spec-label {
+                font-weight: 600;
+                color: var(--dark-silver);
+                font-family: var(--font-body);
+                font-size: 1rem;
+            }
+
+            .spec-value {
+                color: var(--medium-silver);
+                font-family: var(--font-body);
+                font-size: 0.95rem;
+                text-align: right;
+            }
+
+            .store-location {
+                background: var(--pure-white);
+                padding: var(--spacing-2xl);
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-medium);
+            }
+
+            .location-title {
+                font-family: var(--font-display);
+                font-size: 2rem;
+                font-weight: 600;
+                color: var(--dark-silver);
+                margin-bottom: var(--spacing-xl);
+                text-align: center;
+            }
+
+            .location-info {
+                text-align: center;
+                margin-bottom: var(--spacing-xl);
+            }
+
+            .location-address {
+                font-size: 1.1rem;
+                color: var(--medium-silver);
+                margin-bottom: var(--spacing-sm);
+                font-family: var(--font-body);
+            }
+
+            .location-hours {
+                color: var(--accent-silver);
+                font-weight: 600;
+                font-family: var(--font-body);
+                font-size: 1rem;
+            }
+
+            .map-container {
+                width: 100%;
+                height: 300px;
+                border-radius: var(--radius-lg);
+                overflow: hidden;
+                box-shadow: var(--shadow-light);
+            }
+
+            .map-iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+
+            .gallery-nav {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: rgba(0, 0, 0, 0.5);
+                color: white;
+                border: none;
+                padding: 15px;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: var(--transition-fast);
+                z-index: 2;
+            }
+
+            .gallery-nav:hover {
+                background: rgba(0, 0, 0, 0.8);
+            }
+
+            .gallery-nav.prev {
+                left: 20px;
+            }
+
+            .gallery-nav.next {
+                right: 20px;
+            }
+
+            /* Responsividade */
+            @media (max-width: 768px) {
+                .product-detail-grid {
+                    grid-template-columns: 1fr;
+                    gap: 30px;
+                }
+
+                .product-title {
+                    font-size: 2rem;
+                }
+
+                .main-image {
+                    height: 400px;
+                }
+
+                .specifications,
+                .store-location {
+                    padding: var(--spacing-lg);
+                }
+
+                .size-options {
+                    justify-content: center;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header Navigation -->
+        <header class="header">
+            <nav class="nav-container">
+                <div class="logo">
+                    <h1>Ternos em goiania</h1>
+                    <h5>Entregas em todo o brasil - Doisellos</h5>
+                </div>
+                <ul class="nav-menu">
+                    <li>
+                        <a href="index.html"
+                            ><i class="fas fa-home"></i> Início</a
+                        >
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/doiselloscamisaria/"
+                            ><i class="fab fa-instagram"></i> Instagram</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            alt="Pagina de Sobre Oficial Dois ellos"
+                            href="./sobre.html"
+                            ><i class="fas fa-info-circle"></i> Sobre Nós</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            alt="Pagina de Contato Oficial Dois ellos"
+                            href="./contato.html"
+                            ><i class="fas fa-envelope"></i> Contato</a
+                        >
+                    </li>
+                </ul>
+                <div class="nav-icons">
+                    <img
+                        src="https://ice-club.my/448347752_1947298762387188_9092958691574414105_n.jpg"
+                        style="width: 50px; border-radius: 35px"
+                        alt="Logo Doisellos"
+                    />
+                </div>
+            </nav>
+        </header>
+
+        <!-- Product Detail Section -->
+        <main class="product-detail-container">
+            <div class="product-detail-grid">
+                <!-- Product Gallery -->
+                <div class="product-gallery-main">
+                    <div class="main-image-container">
+                        <img
+                            id="mainImage"
+                            src="https://www.doisellos.com.br/produto2-foto01.webp.webp"
+                            alt="Terno Clássico - Vista Principal"
+                            class="main-image"
+                        />
+                        <button
+                            class="gallery-nav prev"
+                            onclick="previousImage()"
+                        >
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="gallery-nav next" onclick="nextImage()">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="thumbnail-gallery">
+                        <div
+                            class="thumbnail active"
+                            onclick="changeMainImage(0)"
+                        >
+                            <img
+                                src="https://www.doisellos.com.br/produto2-foto01.webp.webp"
+                                alt="Terno Clássico - Vista 1"
+                            />
+                        </div>
+                        <div class="thumbnail" onclick="changeMainImage(1)">
+                            <img
+                                src="https://www.doisellos.com.br/produto2-foto02.webp.webp"
+                                alt="Terno Clássico - Vista 2"
+                            />
+                        </div>
+                        <div class="thumbnail" onclick="changeMainImage(2)">
+                            <img
+                                src="https://www.doisellos.com.br/produto2-foto03.webp.webp"
+                                alt="Terno Clássico - Vista 3"
+                            />
+                        </div>
+                        <div class="thumbnail" onclick="changeMainImage(3)">
+                            <img
+                                src="https://www.doisellos.com.br/produto2-foto04.webp.webp"
+                                alt="Terno Clássico - Vista 4"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Information -->
+                <div class="product-info-main">
+                    <h1 class="product-title">Terno Clássico</h1>
+                    <div class="product-price">R$ 450,00</div>
+
+                    <p class="product-description-main">
+                        O Terno Clássico da Doisellos combina versatilidade e
+                        sofisticação em um só modelo. Com corte tradicional e
+                        tecidos de alta qualidade, este terno é perfeito para
+                        diversas ocasiões, desde reuniões de trabalho até
+                        eventos sociais importantes.
+                    </p>
+
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label class="option-label">Tamanho:</label>
+                            <div class="size-options">
+                                <div
+                                    class="size-option"
+                                    onclick="selectSize(this)"
+                                >
+                                    P
+                                </div>
+                                <div
+                                    class="size-option"
+                                    onclick="selectSize(this)"
+                                >
+                                    M
+                                </div>
+                                <div
+                                    class="size-option selected"
+                                    onclick="selectSize(this)"
+                                >
+                                    G
+                                </div>
+                                <div
+                                    class="size-option"
+                                    onclick="selectSize(this)"
+                                >
+                                    GG
+                                </div>
+                                <div
+                                    class="size-option"
+                                    onclick="selectSize(this)"
+                                >
+                                    XGG
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label class="option-label">Cor:</label>
+                            <div class="color-options">
+                                <div
+                                    class="color-option selected"
+                                    style="background-color: #2c3e50"
+                                    onclick="selectColor(this)"
+                                ></div>
+                                <div
+                                    class="color-option"
+                                    style="background-color: #34495e"
+                                    onclick="selectColor(this)"
+                                ></div>
+                                <div
+                                    class="color-option"
+                                    style="background-color: #1a1a1a"
+                                    onclick="selectColor(this)"
+                                ></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="purchase-section">
+                        <a
+                            href="https://wa.me/5562981906158?text=Olá! Tenho interesse no Terno Clássico por R$ 450,00"
+                            class="buy-button"
+                        >
+                            <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                        </a>
+                        <a href="tel:+5562981906158" class="contact-button">
+                            <i class="fas fa-phone"></i> Ligar Agora
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specifications Section -->
+            <div class="specifications">
+                <h2 class="spec-title">Especificações do Produto</h2>
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <span class="spec-label">Material</span>
+                        <span class="spec-value">Tecido Premium Misto</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Corte</span>
+                        <span class="spec-value">Clássico Tradicional</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Composição</span>
+                        <span class="spec-value"
+                            >65% Poliéster, 35% Viscose</span
+                        >
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Conservação</span>
+                        <span class="spec-value">Lavagem a Seco</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Entrega</span>
+                        <span class="spec-value">Todo o Brasil</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Garantia</span>
+                        <span class="spec-value">30 dias</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Store Location Section -->
+            <div class="store-location">
+                <h2 class="location-title">Nossa Loja</h2>
+                <div class="location-info">
+                    <p class="location-address">
+                        Galeria Coração - R. 301, 44, Goiânia, GO
+                    </p>
+                    <p class="location-hours">
+                        Segunda a Sexta: 09:00 - 18:00 | Sábado: 09:00 - 14:00
+                    </p>
+                </div>
+                <div class="map-container">
+                    <iframe
+                        class="map-iframe"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3822.8944462896893!2d-49.2645134!3d-16.6894444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935ef3b6c7b5c5d7%3A0x7b2a4c3d8e9f1a2b!2sR.%20301%2C%2044%20-%20Setor%20Central%2C%20Goi%C3%A2nia%20-%20GO!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                    >
+                    </iframe>
+                </div>
+            </div>
+        </main>
+
+        <section class="social-media-section">
+            <div class="container">
+                <h2>Siga a Doisellos nas Redes Sociais</h2>
+                <p>
+                    Acompanhe nossas novidades, promoções e dicas de moda
+                    masculina
+                </p>
+                <div class="social-media-grid">
+                    <a
+                        href="https://www.instagram.com/doiselloscamisaria/"
+                        target="_blank"
+                        class="social-card instagram"
+                    >
+                        <i class="fab fa-instagram"></i>
+                        <h3>Instagram</h3>
+                        <p>@doiselloscamisaria</p>
+                    </a>
+                    <a
+                        href="https://www.facebook.com/people/doiselloscamisaria/100064169191488/?_rdr"
+                        target="_blank"
+                        class="social-card facebook"
+                    >
+                        <i class="fab fa-facebook"></i>
+                        <h3>Facebook</h3>
+                        <p>doiselloscamisaria</p>
+                    </a>
+                    <a
+                        href="https://www.tiktok.com/@doisellos"
+                        target="_blank"
+                        class="social-card tiktok"
+                    >
+                        <i class="fab fa-tiktok"></i>
+                        <h3>TikTok</h3>
+                        <p>@doisellos</p>
+                    </a>
+                    <a
+                        href="https://br.pinterest.com/doisellos/"
+                        target="_blank"
+                        class="social-card pinterest"
+                    >
+                        <i class="fab fa-pinterest"></i>
+                        <h3>Pinterest</h3>
+                        <p>doisellos</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>Doisellos Camisetaria</h3>
+                        <p>
+                            Sua loja de confiança em camisetas sociais e trajes
+                            masculinos em Goiânia.
+                        </p>
+                        <div class="social-icons">
+                            <a
+                                href="https://www.instagram.com/doiselloscamisaria/"
+                                target="_blank"
+                                ><i class="fab fa-instagram"></i
+                            ></a>
+                            <a
+                                href="https://wa.me/5562981906158"
+                                target="_blank"
+                                ><i class="fab fa-whatsapp"></i
+                            ></a>
+                            <a href="mailto:contato@doisellos.com.br"
+                                ><i class="fas fa-envelope"></i
+                            ></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Categorias</h4>
+                        <ul>
+                            <li><a href="index.html">Ternos</a></li>
+                            <li><a href="#camisetas">Camisetas Sociais</a></li>
+                            <li><a href="calcas.html">Calças Sociais</a></li>
+                            <li><a href="index.html">Acessórios</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Atendimento</h4>
+                        <ul>
+                            <li>Segunda a Sexta: 9h às 18h</li>
+                            <li>Sábado: 9h às 14h</li>
+                            <li>Domingo: Fechado</li>
+                            <li>Feriados: Consultar</li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Contato</h4>
+                        <ul>
+                            <li>Galeria coração - R. 301, 44</li>
+                            <li>Goiânia, GO, 74063-380</li>
+                            <li>(62) 98190-6158</li>
+                            <li>contato@doisellos.com.br</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>
+                        © 2024 Doisellos Camisetaria. Todos os direitos
+                        reservados.
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <script>
+            const images = [
+                "https://www.doisellos.com.br/produto2-foto01.webp.webp",
+                "https://www.doisellos.com.br/produto2-foto02.webp.webp",
+                "https://www.doisellos.com.br/produto2-foto03.webp.webp",
+                "https://www.doisellos.com.br/produto2-foto04.webp.webp",
+            ];
+
+            let currentImageIndex = 0;
+
+            function changeMainImage(index) {
+                currentImageIndex = index;
+                document.getElementById("mainImage").src = images[index];
+
+                // Update active thumbnail
+                document.querySelectorAll(".thumbnail").forEach((thumb, i) => {
+                    thumb.classList.toggle("active", i === index);
+                });
+            }
+
+            function nextImage() {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                changeMainImage(currentImageIndex);
+            }
+
+            function previousImage() {
+                currentImageIndex =
+                    (currentImageIndex - 1 + images.length) % images.length;
+                changeMainImage(currentImageIndex);
+            }
+
+            function selectSize(element) {
+                document.querySelectorAll(".size-option").forEach((option) => {
+                    option.classList.remove("selected");
+                });
+                element.classList.add("selected");
+            }
+
+            function selectColor(element) {
+                document.querySelectorAll(".color-option").forEach((option) => {
+                    option.classList.remove("selected");
+                });
+                element.classList.add("selected");
+            }
+        </script>
+    </body>
+</html>
