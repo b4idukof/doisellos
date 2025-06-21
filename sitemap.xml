@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <!-- Páginas principais -->
     <url>
         <loc>https://doisellos.com.br/</loc>
         <lastmod>2024-06-03</lastmod>
@@ -36,4 +38,61 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+
+    <!-- Novas páginas adicionadas -->
+    <url>
+        <loc>https://www.doisellos.com.br/camisetas.html</loc>
+        <lastmod>2024-06-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.doisellos.com.br/calcas.html</loc>
+        <lastmod>2024-06-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.doisellos.com.br/produto-terno-executivo.html</loc>
+        <lastmod>2024-06-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.doisellos.com.br/produto-terno-classico.html</loc>
+        <lastmod>2024-06-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.doisellos.com.br/produto-terno-slim-fit.html</loc>
+        <lastmod>2024-06-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.doisellos.com.br/produto-camiseta-social.html</loc>
+        <lastmod>2024-06-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.doisellos.com.br/produto-terno-black-elegance.html</loc>
+        <lastmod>2024-06-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.doisellos.com.br/produto-camiseta-premium.html</loc>
+        <lastmod>2024-06-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.doisellos.com.br/produto-calcas-social.html</loc>
+        <lastmod>2024-06-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
 </urlset>
