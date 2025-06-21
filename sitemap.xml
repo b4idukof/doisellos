@@ -94,5 +94,35 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-
+    <url>
+        <loc>https://www.doisellos.com.br/produto-calcas-social.html</loc>
+        <lastmod>2024-06-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+        <url>
+        <loc>https://www.doisellos.com.br/por-que-a-44-virou-o-polo-de-ternos-em-goiania.html</loc>
+        <lastmod>2024-06-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+        <url>
+        <loc>https://www.doisellos.com.br/5-erros-para-evitar-ao-comprar-ternos-em-goiania.html</loc>
+        <lastmod>2024-06-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+        <url>
+        <loc>https://www.doisellos.com.br/Diferencas-entre-terno-sob-medida-e-pronto.html</loc>
+        <lastmod>2024-06-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+        <url>
+        <loc>http://doisellos.com.br/Como-escolher-terno-ideal-para-casamento-em-Goiania.html</loc>
+        <lastmod>2024-06-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
 </urlset>
